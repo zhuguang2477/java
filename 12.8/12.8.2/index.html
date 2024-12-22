@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Промокод</title>
+    <style>
+        .form {
+            margin: 20px;
+        }
+        .activated {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form">
+    <input id="promo-input" type="text" placeholder="Введите промокод">
+    <button id="promo-submit">Подтвердить</button>
+    <p id="promo-message"></p>
+</div>
+
+<script>
+    const promocodeObj = { promocode: "PROM50", gift: "Скидка 50%" };
+
+    function getCookie() {
+        return document.cookie.split('; ').reduce((acc, item) => {
+            const [name, value] = item.split('=');
+            acc[name] = value;
+            return acc;
+        }, {});
+    }
+
+    function checkPromocode() {
+        const enteredCode = document.getElementById("promo-input").value;
+        const messageElem = document.getElementById("promo-message");
+
+        if (enteredCode === promocodeObj.promocode) {
+            messageElem.textContent = `Промокод активирован! ${promocodeObj.gift}`;
+            messageElem.className = 'activated';
+            document.cookie = `promoCode=${enteredCode}; path=/;`;
+        } else {
+            messageElem.textContent = '';
+        }
+    }
+
+    function loadPromocode() {
+        const cookie = getCookie();
+        if (cookie.promoCode) {
+            document.getElementById("promo-input").value = cookie.promoCode;
+            checkPromocode();
+        }
+    }
+
+    document.getElementById("promo-submit").onclick = function() {
+        checkPromocode();
+    };
+
+    window.onload = loadPromocode;
+</script>
+</body>
+</html>
