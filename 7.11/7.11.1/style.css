@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.books {
+    list-style-type: none;
+    padding: 0;
+}
+
+.books li {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin: 5px 0;
+}

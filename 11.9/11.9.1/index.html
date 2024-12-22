@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма Опроса</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Форма Опроса</h1>
+    <form id="surveyForm">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Пол:</label>
+        <input type="radio" name="gender" value="Мужской" required> Мужской
+        <input type="radio" name="gender" value="Женский"> Женский
+
+        <label for="rating">Оценка сервиса:</label>
+        <input type="range" id="rating" min="1" max="10">
+
+        <label>Интересы:</label>
+        <input type="checkbox" value="Спорт"> Спорт
+        <input type="checkbox" value="Музыка"> Музыка
+        <input type="checkbox" value="Путешествия"> Путешествия
+        <input type="checkbox" value="Кино"> Кино
+
+        <label for="comments">Дополнительные комментарии:</label>
+        <textarea id="comments"></textarea>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="survey.js"></script>
+</body>
+</html>

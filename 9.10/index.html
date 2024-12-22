@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автомобильная библиотека</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Библиотека автомобилей</h1>
+    <div>
+        <h2>Поиск автомобиля</h2>
+        <input type="text" id="carNameInput" placeholder="Введите марку автомобиля">
+        <button id="searchButton">Поиск</button>
+        <p id="searchResult"></p>
+    </div>
+
+    <div>
+        <h2>Список автомобилей</h2>
+        <button id="listButton">Показать все автомобили</button>
+        <ul id="carList"></ul>
+    </div>
+
+    <div>
+        <h2>Создать автомобиль</h2>
+        <button id="createCarButton">Создать автомобиль</button>
+        <pre id="newCarResult"></pre>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

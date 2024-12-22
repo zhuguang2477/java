@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банкомат</title>
+</head>
+<body>
+    <h1>Банкомат</h1>
+    <input type="number" id="transactionAmount" placeholder="Введите сумму операции" />
+    <button id="performTransaction">Выполнить операцию</button>
+    <p id="atmResult"></p>
+
+    <script>
+        const cardInATM = true;
+        const balance = 500;
+
+        document.getElementById('performTransaction').addEventListener('click', () => {
+            const transactionAmount = Number(document.getElementById('transactionAmount').value);
+
+            if (cardInATM && transactionAmount <= balance) {
+                console.log("Операция выполняется");
+                document.getElementById('atmResult').textContent = "Операция выполняется";
+            } else {
+                console.log("Операция отклонена");
+                document.getElementById('atmResult').textContent = "Операция отклонена";
+            }
+        });
+    </script>
+</body>
+</html>

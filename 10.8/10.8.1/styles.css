@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: flex;
+}
+
+.thumbnail {
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.full-size-container {
+    margin-top: 20px;
+}
+
+#full-size {
+    max-width: 100%;
+    height: auto;
+}
